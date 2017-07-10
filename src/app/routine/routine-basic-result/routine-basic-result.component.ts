@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Routine } from './routine'
+import { Routine } from './../routine'
 
 @Component({
   selector: 'app-routine-basic-result',
@@ -15,11 +15,11 @@ export class RoutineBasicResultComponent implements OnInit {
 
   ngOnInit() {
     this.routines = new Array();
-    this.routine = new Routine();
-    this.routine.name = "Routine 1";
-    this.routine.evaluation = "Success";
-    this.routine.result = 170;
-    this.routines.push(this.routine)
+    // this.routine = new Routine();
+    // this.routine.name = "Routine 1";
+    // this.routine.evaluation = "success";
+    // this.routine.result = 170;
+    // this.routines.push(this.routine)
   }
 
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {RoutineBasicResultComponent} from '../app/routine-basic-result/routine-basic-result.component'
+import {EvaluationComponent} from '../app/evaluation/evaluation.component'
 
 @Component({
   selector: 'app-root',
