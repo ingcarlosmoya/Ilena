@@ -5,12 +5,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { RoutineBasicResultComponent } from './routine/routine-basic-result/routine-basic-result.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
+import { PersonBasicInfoComponent } from './people/person-basic-info/person-basic-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutineBasicResultComponent,
-    EvaluationComponent
+    EvaluationComponent,
+    PersonBasicInfoComponent
   ],
   imports: [
     BrowserModule,

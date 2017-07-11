@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Routine } from './../routine/routine';
+import { Person } from './../people/person';
+import { PersonBasicInfoComponent } from './../people/person-basic-info/person-basic-info.component'
 import {RoutineBasicResultComponent} from '../routine/routine-basic-result/routine-basic-result.component'
 
 @Component({
@@ -10,12 +12,18 @@ import {RoutineBasicResultComponent} from '../routine/routine-basic-result/routi
 export class EvaluationComponent implements OnInit {
 
  routines:Routine[];
+ person:Person;
  routine:Routine;
 
   
   constructor() { }
 
   ngOnInit() {
+    this.person = new Person();
+    this.person.name = 'Tom';
+    this.person.lastName = 'Brady';
+    this.person.age = 32;
+    this.person.gender = "Male";
     this.routines = new Array();
     this.routine = new Routine();
     this.routine.name = "Routine 1";
