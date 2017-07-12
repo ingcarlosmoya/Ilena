@@ -1,0 +1,17 @@
+.square{
+    height: 20px;
+    width: 20px;
+}
+
+.circle{
+      border-radius: 50%;
+    height: 80px;
+    padding-top: 28px;
+            width: 80px;
+}
+
+
+.square-container label{
+    margin-top: 4px;
+    margin-bottom: 0px;
+}

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { RoutineBasicResultComponent } from './routine/routine-basic-result/routine-basic-result.component';
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { PersonBasicInfoComponent } from './people/person-basic-info/person-basic-info.component';
+import { PhysicalExamComponent } from './people/physical-exam/physical-exam.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RoutineBasicResultComponent,
     EvaluationComponent,
-    PersonBasicInfoComponent
+    PersonBasicInfoComponent,
+    PhysicalExamComponent
   ],
   imports: [
     BrowserModule,
