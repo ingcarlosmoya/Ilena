@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-//import { BrowserAnimationsModule } from '@angular/platform-browser-animations';
 import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { AppComponent } from './app.component';
 import { RoutineBasicResultComponent } from './routine/routine-basic-result/routine-basic-result.component';
@@ -21,7 +21,8 @@ import { PhysicalExamComponent } from './people/physical-exam/physical-exam.comp
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
-    NgxChartsModule
+    NgxChartsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
