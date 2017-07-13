@@ -74,3 +74,16 @@
   <hr>
 
 </div>
+
+
+
+ <ngx-charts-linear-gauge
+      [view]="view"
+      [scheme]="colorScheme"
+      [value]="60"
+      [previousValue]="80"
+      [min]="0"
+      [max]="100"
+      [units]="'alerts'"
+      (select)="onSelect($event)">
+    </ngx-charts-linear-gauge>
