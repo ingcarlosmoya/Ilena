@@ -5,21 +5,63 @@
     </div>
   </div>
 </div>
-<div class="bs-example" data-example-id="contextual-table">
-  <table class="table table-bordered table-hover">
-    <thead class="thead-inverse">
-      <tr class="text-center">
-        <th class="text-center">Description</th>
-        <th class="text-center">Result</th>
-        <th class="text-center">Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let routine of routines" [ngClass]="{'table-danger': routine.evaluation == 'danger','table-warning': routine.evaluation == 'warning','table-success': routine.evaluation == 'success'}">
-        <td>{{routine.name}}</td>
-        <td>{{routine.result}}</td>
-        <td>{{routine.evaluation}}</td>
-      </tr>
-    </tbody>
-  </table>
+
+
+
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+      <div class="bs-example" data-example-id="contextual-table">
+        <table class="table table-sm  table-bordered">
+          <thead class="thead-inverse">
+            <tr class="text-center">
+              <th class="text-center">Color</th>
+              <th class="text-center">Diagnostic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="square-container">
+                <label class="square alert-danger"></label>
+              </td>
+              <td><label>Hypomobility</label></td>
+            </tr>
+            <tr>
+              <td class="square-container">
+                <label class="square alert-success"></label>
+              </td>
+              <td><label>Normal</label></td>
+            </tr>
+            <tr>
+              <td class="square-container">
+                <label class="square alert-warning"></label>
+              </td>
+              <td><label>Hypermobility</label></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="bs-example" data-example-id="contextual-table">
+        <table class="table table-bordered table-hover">
+          <thead class="thead-inverse">
+            <tr class="text-center">
+              <th class="text-center">Description</th>
+              <th class="text-center">Result</th>
+              <th class="text-center">Rating</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let routine of routines" [ngClass]="{'table-danger': routine.evaluation == 'danger','table-warning': routine.evaluation == 'warning','table-success': routine.evaluation == 'success'}">
+              <td>{{routine.name}}</td>
+              <td>{{routine.result}}</td>
+              <td>{{routine.evaluation}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>

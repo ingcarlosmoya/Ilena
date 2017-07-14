@@ -9,6 +9,7 @@ import { RoutineBasicResultComponent } from './routine/routine-basic-result/rout
 import { EvaluationComponent } from './evaluation/evaluation.component';
 import { PersonBasicInfoComponent } from './people/person-basic-info/person-basic-info.component';
 import { PhysicalExamComponent } from './people/physical-exam/physical-exam.component';
+import { HabitsComponent } from './people/habits/habits.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PhysicalExamComponent } from './people/physical-exam/physical-exam.comp
     RoutineBasicResultComponent,
     EvaluationComponent,
     PersonBasicInfoComponent,
-    PhysicalExamComponent
+    PhysicalExamComponent,
+    HabitsComponent
   ],
   imports: [
     BrowserModule,

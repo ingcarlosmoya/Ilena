@@ -2,9 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Routine } from './../routine/routine';
 import { Person } from './../people/person';
 import { PhysicalExam } from './../people/physical-exam';
+import { Habits } from './../people/habits';
 import { PersonBasicInfoComponent } from './../people/person-basic-info/person-basic-info.component'
 import { PhysicalExamComponent } from './../people/physical-exam/physical-exam.component';
 import { RoutineBasicResultComponent } from '../routine/routine-basic-result/routine-basic-result.component'
+import { HabitsComponent } from './../people/habits/habits.component';
 
 @Component({
   selector: 'app-evaluation',
@@ -17,6 +19,7 @@ export class EvaluationComponent implements OnInit {
  person:Person;
  physicalExam: PhysicalExam;
  routine:Routine;
+ habits:Habits;
 
   
   constructor() { }
@@ -34,6 +37,12 @@ export class EvaluationComponent implements OnInit {
     this.physicalExam.bmi = 14;
     this.physicalExam.bmiDiagnostic = 'Very severely underweight';
     
+    this.habits = new Habits();
+    this.habits.activeBreaks = true;
+    this.habits.seated = 10;
+    this.habits.sleep = 8;
+    this.habits.sport = true;
+
     this.routines = new Array();
     this.routine = new Routine();
     this.routine.name = "Routine 1";
@@ -53,6 +62,7 @@ export class EvaluationComponent implements OnInit {
     this.routine.result = 160;
     this.routine.sort = 3;
     this.routines.push(this.routine)
+
   }
 
 }
