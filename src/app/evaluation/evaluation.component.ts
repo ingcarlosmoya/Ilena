@@ -26,12 +26,12 @@ export class EvaluationComponent implements OnInit {
     this.person.name = 'Tom';
     this.person.lastName = 'Brady';
     this.person.age = 32;
-    this.person.gender = "Male";
+    this.person.gender = "male";
 
     this.physicalExam = new PhysicalExam();
     this.physicalExam.weight = 63.5;
-    this.physicalExam.height = 1.70;
-    this.physicalExam.bmi = 20.56;
+    this.physicalExam.height = 170;
+    this.physicalExam.bmi = 14;
     this.physicalExam.bmiDiagnostic = 'Very severely underweight';
     
     this.routines = new Array();

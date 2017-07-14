@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PhysicalExam } from './../physical-exam';
+
 @Component({
   selector: 'app-physical-exam',
   templateUrl: './physical-exam.component.html',
@@ -9,38 +10,20 @@ export class PhysicalExamComponent implements OnInit {
 
   @Input() physicalExam: PhysicalExam;
   bmiClass: string;
+  physicalScheme = {
+    domain: ['#FF8000']
+  };
+  physiclMeasurementView: any[] = [300, 100];
 
-  view: any[] = [200, 100];
   data: any[];
 
-
-  constructor() {
-
-    var single = [
-      {
-        "name": "Germany",
-        "value": 8940000
-      },
-      {
-        "name": "USA",
-        "value": 5000000
-      },
-      {
-        "name": "France",
-        "value": 7200000
-      }];
-
-    this.data = single;
+ constructor() { 
   }
-
-
-  colorScheme = {
-    domain: ['#5AA454', '#A10A28', '#C7B42C']
-  };
 
   onSelect(event) {
     console.log(event);
   }
+  
   ngOnInit() {
   }
 
@@ -66,5 +49,8 @@ export class PhysicalExamComponent implements OnInit {
 
     return className;
   }
+
+
+
 
 }

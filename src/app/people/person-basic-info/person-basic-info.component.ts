@@ -8,11 +8,25 @@ import { Person } from './../person';
 })
 export class PersonBasicInfoComponent implements OnInit {
 
-  @Input() person:Person
+  @Input() person: Person;
+  scheme = {
+    domain: ['#FF8000']
+  }
+  view: any[] = [300, 100];
+
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  getGenderImage() {
+    var genderImage = 'assets/img/female.jpg';
+    if (this.person.gender = 'male') {
+      genderImage = 'assets/img/male.jpg';
+    }
+
+    return genderImage;
+
+  }
 }

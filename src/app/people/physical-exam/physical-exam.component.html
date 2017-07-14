@@ -9,13 +9,15 @@
     <div class="col-md-6">
       <div class="form-group">
         <h5 class="text-left" for="firstname">Height</h5>
-        <label class="form-control" name="firstname">{{physicalExam.height}} mts</label>
+        <ngx-charts-linear-gauge [view]="physiclMeasurementView" [scheme]="physicalScheme" [value]="physicalExam.height" [min]="0" [max]="250" [units]="'centimeters'">
+          </ngx-charts-linear-gauge>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
         <h5 class="text-left" for="lastName">Weight</h5>
-        <label class="form-control" name="lastName">{{physicalExam.weight}} kgs</label>
+         <ngx-charts-linear-gauge [view]="physiclMeasurementView" [scheme]="physicalScheme" [value]="physicalExam.weight"  [min]="0" [max]="150" [units]="'kilograms'">
+          </ngx-charts-linear-gauge>
       </div>
     </div>
   </div>
@@ -66,8 +68,8 @@
     <div class="col-md-6  text-center">
       <div class="form-group">
         <br>
-         <label class="circle {{bmiClass}}" name="gender"><strong>{{physicalExam.bmi}}</strong> </label>
-         <label [ngClass]="getBmiDiagnosticClass()" name="gender"><small>{{physicalExam.bmiDiagnostic}}</small></label>
+        <label class="circle {{bmiClass}}" name="gender"><strong>{{physicalExam.bmi}}</strong> </label>
+        <label [ngClass]="getBmiDiagnosticClass()" name="gender"><small>{{physicalExam.bmiDiagnostic}}</small></label>
       </div>
     </div>
   </div>
@@ -77,13 +79,7 @@
 
 
 
- <ngx-charts-linear-gauge
-      [view]="view"
-      [scheme]="colorScheme"
-      [value]="8"
-      [previousValue]="80"
-      [min]="0"
-      [max]="24"
-      [units]="'hours'"
-      (select)="onSelect($event)">
-    </ngx-charts-linear-gauge>
+<!--<ngx-charts-linear-gauge [view]="view" [scheme]="colorScheme" [value]="8" [previousValue]="80" [min]="0" [max]="24" [units]="'hours'"
+  (select)="onSelect($event)">
+  </ngx-charts-linear-gauge>-->
+

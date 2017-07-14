@@ -4,30 +4,32 @@
       <h1 class="display-4">Profile</h1>
     </div>
   </div>
-<br>
+  <br>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">
-        <h5 class="text-left" for="firstname">Nombres</h5>
-        <label class="form-control" name="firstname">{{person.name}}</label>
+        <h5 class="text-left" for="firstname">Name</h5>
+        <p>{{person.name}}</p>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <h5 class="text-left" for="lastName">Apellidos</h5>
-        <label class="form-control" name="lastName">{{person.lastName}}</label>
+        <h5 class="text-left" for="lastName">Last Name</h5>
+        <p>{{person.lastName}}</p>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <h5 class="text-left" for="gender">Genero</h5>
-        <label class="form-control" name="gender">{{person.gender}}</label>
+        <h5 class="text-left" for="gender">Gender</h5>
+        <img class="gender" [src]=getGenderImage()>
       </div>
     </div>
     <div class="col-md-6">
       <div class="form-group">
-        <h5 class="text-left" for="gender">Edad</h5>
-        <label class="form-control" name="age">{{person.age}}</label>
+        <h5 class="text-left" for="gender">Age</h5>
+        <ngx-charts-linear-gauge [view]="view" [scheme]="scheme" [value]="person.age" [previousValue]="100" [min]="0" [max]="100"
+          [units]="'years'">
+          </ngx-charts-linear-gauge>
       </div>
     </div>
   </div>
