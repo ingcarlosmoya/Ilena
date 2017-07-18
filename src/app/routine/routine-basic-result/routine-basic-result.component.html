@@ -50,6 +50,7 @@
             <tr class="text-center">
               <th class="text-center">Description</th>
               <th class="text-center">Result</th>
+              <th class="text-center">Pain</th>
               <th class="text-center">Rating</th>
             </tr>
           </thead>
@@ -57,6 +58,7 @@
             <tr *ngFor="let routine of routines" [ngClass]="{'table-danger': routine.evaluation == 'danger','table-warning': routine.evaluation == 'warning','table-success': routine.evaluation == 'success'}">
               <td>{{routine.name}}</td>
               <td>{{routine.result}}</td>
+              <td>{{routine.pain}}</td>
               <td>{{routine.evaluation}}</td>
             </tr>
           </tbody>
