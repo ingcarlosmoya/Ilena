@@ -25,6 +25,7 @@ export class EvaluationComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
     this.person = new Person();
     this.person.name = 'Tom';
     this.person.lastName = 'Brady';
