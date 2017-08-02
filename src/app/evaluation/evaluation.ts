@@ -1,10 +1,12 @@
 import { Person } from './../people/person';
 import { Habits } from './../people/habits';
 import { PhysicalExam } from './../people/physical-exam';
+import { Routine } from './../routine/routine';
 
 
 export class Evaluation {
-    person:Person;
-    habits:Habits;
-    physicalExam:PhysicalExam;
+    person: Person;
+    physicalExam: PhysicalExam;
+    habits: Habits;
+    routines: Routine[];
 }

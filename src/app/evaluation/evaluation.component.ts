@@ -7,6 +7,8 @@ import { PersonBasicInfoComponent } from './../people/person-basic-info/person-b
 import { PhysicalExamComponent } from './../people/physical-exam/physical-exam.component';
 import { RoutineBasicResultComponent } from '../routine/routine-basic-result/routine-basic-result.component'
 import { HabitsComponent } from './../people/habits/habits.component';
+import { EvaluationService } from './evaluation.service';  
+import { Evaluation } from './evaluation';
 
 @Component({
   selector: 'app-evaluation',
@@ -20,12 +22,17 @@ export class EvaluationComponent implements OnInit {
  physicalExam: PhysicalExam;
  routine:Routine;
  habits:Habits;
+ evaluation:Evaluation;
 
   
-  constructor() { }
+  constructor(private _evaluationService: EvaluationService) { }
 
   ngOnInit() {
     
+    this._evaluationService.getEvaluationByPatientId('DC1B99C1-E3DF-41DC-B289-6E6FD7B968DD').subscribe(c => this.routines = c);
+
+    
+
     this.person = new Person();
     this.person.name = 'Tom';
     this.person.lastName = 'Brady';
@@ -44,25 +51,25 @@ export class EvaluationComponent implements OnInit {
     this.habits.sleep = 8;
     this.habits.sport = true;
 
-    this.routines = new Array();
-    this.routine = new Routine();
-    this.routine.name = "Routine 1";
-    this.routine.evaluation = "success";
-    this.routine.result = 170;
-    this.routine.sort = 1;
-    this.routines.push(this.routine)
-    this.routine = new Routine();
-    this.routine.name = "Routine 2";
-    this.routine.evaluation = "warning";
-    this.routine.result = 190;
-    this.routine.sort = 2;
-    this.routines.push(this.routine)
-    this.routine = new Routine();
-    this.routine.name = "Routine 1";
-    this.routine.evaluation = "danger";
-    this.routine.result = 160;
-    this.routine.sort = 3;
-    this.routines.push(this.routine)
+    // this.routines = new Array();
+    // this.routine = new Routine();
+    // this.routine.name = "Routine 1";
+    // this.routine.evaluation = "success";
+    // this.routine.result = 170;
+    // this.routine.sort = 1;
+    // this.routines.push(this.routine)
+    // this.routine = new Routine();
+    // this.routine.name = "Routine 2";
+    // this.routine.evaluation = "warning";
+    // this.routine.result = 190;
+    // this.routine.sort = 2;
+    // this.routines.push(this.routine)
+    // this.routine = new Routine();
+    // this.routine.name = "Routine 1";
+    // this.routine.evaluation = "danger";
+    // this.routine.result = 160;
+    // this.routine.sort = 3;
+    // this.routines.push(this.routine)
 
   }
 
