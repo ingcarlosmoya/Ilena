@@ -18,6 +18,7 @@ export class PersonBasicInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.person = new Person();
   }
 
   getGenderImage() {

@@ -9,4 +9,12 @@ export class Evaluation {
     physicalExam: PhysicalExam;
     habits: Habits;
     routines: Routine[];
+
+    constructor()
+    {
+        this.person = new Person();
+        this.habits = new Habits();
+        this.physicalExam = new PhysicalExam();
+        this.routines = new Array();
+     }
 }

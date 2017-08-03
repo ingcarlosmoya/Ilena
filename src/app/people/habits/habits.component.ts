@@ -9,24 +9,27 @@ import { Habits } from './../habits';
 export class HabitsComponent implements OnInit {
 
   @Input() habits: Habits;
-  single:any[];
+  single: any[];
   constructor() { }
 
   ngOnInit() {
-   this.single  = [
-  {
-    "name": "Work",
-    "value": this.habits.seated
-  },
-  {
-    "name": "Sleep",
-    "value": this.habits.sleep
-  },
-  {
-    "name": "Other",
-    "value": 24 - (this.habits.seated + this.habits.sleep)
+
+    if (this.habits != undefined) {
+      this.single = [
+        {
+          "name": "Work",
+          "value": this.habits.seated
+        },
+        {
+          "name": "Sleep",
+          "value": this.habits.sleep
+        },
+        {
+          "name": "Other",
+          "value": 24 - (this.habits.seated + this.habits.sleep)
+        }
+      ];
     }
-];
   }
 
   multi: any[];
@@ -35,12 +38,12 @@ export class HabitsComponent implements OnInit {
   view: any[] = [450, 350];
 
   colorScheme = {
-    domain: ['#5AA454', '#C7B42C', '#A10A28','#AAAAAA']
+    domain: ['#5AA454', '#C7B42C', '#A10A28', '#AAAAAA']
   };
 
   autoScale = false;
 
-  getSportImage(){
+  getSportImage() {
     var sportImage = 'assets/img/noSport.jpg';
     if (this.habits.sport = true) {
       sportImage = 'assets/img/yesSport.jpg';
@@ -49,7 +52,11 @@ export class HabitsComponent implements OnInit {
     return sportImage;
   }
 
-  getActiveBreaksImage(){
+  getSingle() {
+
+  }
+
+  getActiveBreaksImage() {
     var activeBreaksImage = 'assets/img/noActiveBreaks.jpg';
     if (this.habits.activeBreaks = true) {
       activeBreaksImage = 'assets/img/yesActiveBreaks.jpg';

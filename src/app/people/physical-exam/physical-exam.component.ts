@@ -25,6 +25,7 @@ export class PhysicalExamComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.physicalExam = new PhysicalExam();
   }
 
   getBmiDiagnosticClass(): string {

@@ -3,4 +3,13 @@ export class Person {
     lastName:string;
     gender:string;
     age:number;
+
+    constructor(){
+        this.name = '';
+        this.age = 0;
+        this.gender = '',
+        this.lastName = '';
+    }
 }
+
+

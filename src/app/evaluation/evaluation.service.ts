@@ -16,13 +16,13 @@ export class EvaluationService {
 
   constructor(private http: Http) { }
 
-  getEvaluationByPatientId(id: string): Observable<Routine[]> {
-    let evaluation$ = this.http
+  getEvaluationByPatientId(id: string): Observable<Evaluation> {
+      let evaluation$ =  this.http
       .get(`${this.baseUrl}/evaluation/${id}`, { headers: this.getHeaders() })
       .map(mapEvaluation);
+
     return evaluation$;
   }
-
 
 
   private getHeaders() {
@@ -38,9 +38,21 @@ export class EvaluationService {
 
 }
 
+function mapEvaluation(response: Response): Evaluation{
+  return toEvaluation(response.json());
+}
 
-function mapEvaluation(response: Response): Routine[] {
-  console.log(response.json());
+function toEvaluation(p: any): Evaluation{
+  let evaluation = <Evaluation>({
+    person: toPerson(p.patient),
+    habits: toHabits(p.patient.habits),
+    physicalExam: toPhysicalExam(p.patient.physicalExam),
+    routines: p.routines.map(toRoutine)
+  });
+  return evaluation;
+}
+
+function mapRoutine(response: Response): Routine[] {
   return response.json().routines.map(toRoutine)
 }
 
@@ -55,11 +67,15 @@ function toRoutine(p: any): Routine {
   return routine;
 }
 
+function mapPerson(response: Response): Person{
+  return toPerson(response.json());
+}
+
 function toPerson(p: any): Person {
   let person = <Person>(
     {
       name: p.name,
-      lastName: p.lastname,
+      lastName: p.lastName,
       gender: p.gender,
       age: p.age
     });
@@ -69,21 +85,21 @@ function toPerson(p: any): Person {
 function toPhysicalExam(p: any): PhysicalExam {
   let physicalExam = <PhysicalExam>(
     {
-      height: p.physicalExam.height,
-      weight: p.physicalExam.weight,
-      bmi: p.physicalExam.bmi,
-      bmiDiagnostic: p.physicalExam.bmiDiagnostic,
-      bmiClass: p.physicalExam.bmiClass
+      height: p.height,
+      weight: p.weight,
+      bmi: p.bmi,
+      bmiDiagnostic: p.bmiDiagnostic,
+      bmiClass: p.bmiClass
     });
   return physicalExam;
 }
 
 function toHabits(p: any): Habits {
   let habits = <Habits>({
-    activeBreaks: p.habits.activeBreaks,
-    seated: p.habits.seated,
-    sleep: p.habits.sleep,
-    sport: p.habits.sport
+    activeBreaks: p.activeBreaks,
+    seated: p.seated,
+    sleep: p.sleep,
+    sport: p.sport
   });
   return habits;
 }
