@@ -1,8 +1,8 @@
 export class Routine {
     name:string;
-    result:number;
-    evaluation:string;
-    pain:boolean;
+    angle:number;
+    result:string;
+    pain:string;
     sort:number;
 
     constructor(){}

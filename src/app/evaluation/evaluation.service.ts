@@ -60,8 +60,8 @@ function mapRoutine(response: Response): Routine[] {
 function toRoutine(p: any): Routine {
   let routine = <Routine>({
     name: p.name,
+    angle: p.angle,
     result: p.result,
-    evaluation: p.evaluation,
     pain: p.pain
   });
   return routine;
