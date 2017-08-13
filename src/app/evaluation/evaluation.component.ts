@@ -3,12 +3,13 @@ import { Routine } from './../routine/routine';
 import { Person } from './../people/person';
 import { PhysicalExam } from './../people/physical-exam';
 import { Habits } from './../people/habits';
-import { PersonBasicInfoComponent } from './../people/person-basic-info/person-basic-info.component'
+import { PersonBasicInfoComponent } from './../people/person-basic-info/person-basic-info.component';
 import { PhysicalExamComponent } from './../people/physical-exam/physical-exam.component';
-import { RoutineBasicResultComponent } from '../routine/routine-basic-result/routine-basic-result.component'
+import { RoutineBasicResultComponent } from '../routine/routine-basic-result/routine-basic-result.component';
 import { HabitsComponent } from './../people/habits/habits.component';
 import { EvaluationService } from './evaluation.service';
 import { Evaluation } from './evaluation';
+import { PeopleReportByPersonComponent } from './../people/people-report-by-person/people-report-by-person.component';
 
 @Component({
   selector: 'app-evaluation',
