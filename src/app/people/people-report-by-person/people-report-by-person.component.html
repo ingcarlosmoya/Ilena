@@ -1,5 +1,6 @@
+<hr />
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-10">
     <div style="display: block;">
     <canvas baseChart width="400" height="400"
                 [datasets]="lineChartData"
@@ -12,7 +13,39 @@
                 (chartClick)="chartClicked($event)"></canvas>
     </div>
   </div>
-  <div class="col-md-6" style="margin-bottom: 10px">
+   <div class="col-md-2">
+      <div class="bs-example" data-example-id="contextual-table">
+        <table class="table table-sm  table-bordered">
+          <thead class="thead-inverse">
+            <tr class="text-center">
+              <th class="text-center">Color</th>
+              <th class="text-center">Diagnostic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="square-container">
+                <label class="square alert-danger"></label>
+              </td>
+              <td><label>{{routine.mean}}</label></td>
+            </tr>
+            <tr>
+              <td class="square-container">
+                <label class="square alert-success"></label>
+              </td>
+              <td><label>{{routine.median}}</label></td>
+            </tr>
+            <tr>
+              <td class="square-container">
+                <label class="square alert-warning"></label>
+              </td>
+              <td><label>Hypermobility</label></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <!--<div class="col-md-6" style="margin-bottom: 10px">
     <table class="table table-responsive table-condensed">
       <tr>
         <th *ngFor="let label of lineChartLabels">{{label}}</th>
@@ -22,5 +55,5 @@
       </tr>
     </table>
     <button (click)="randomize()">CLICK</button>
-  </div>
+  </div>-->
 </div>

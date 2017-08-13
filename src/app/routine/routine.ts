@@ -5,5 +5,11 @@ export class Routine {
     pain:string;
     sort:number;
 
+    angles:number[];
+    labels:any[];
+    label:string;
+    mean:number;
+    median:number;
+
     constructor(){}
 }

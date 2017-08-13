@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { Routine } from './../../routine/routine';
 
 @Component({
   selector: 'app-people-report-by-person',
@@ -8,18 +9,28 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
 })
 export class PeopleReportByPersonComponent implements OnInit {
 
+  @Input() routine:Routine;
   constructor() { }
 
   ngOnInit() {
+    this.setSerie();
   }
 
+
+  setSerie(){
+  // this.lineChartData = [
+  //   {data: [65.1, 64.2, 80, 65.1, 56, 55.5, 40], label: 'Series A'}
+  // ];
+
+   this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  //this.lineChartLabels = ['0', '25', '50', '75', '100', '125', '150','175', '220']
+  this.lineChartData = [{data: this.routine.angles, label: this.routine.name}];
+  //console.log(this.routine.labels);
+  this.lineChartLabels = this.routine.labels;
+  }
   // lineChart
-  public lineChartData:Array<any> = [
-    {data: [65.1, 64.2, 80, 65.1, 56, 55.5, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'},
-    {data: [18, 48, 77, 9, 100, 27, 40], label: 'Series C'}
-  ];
-  public lineChartLabels:Array<any> = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  public lineChartData:Array<any>;
+  public lineChartLabels:Array<any>;
   public lineChartOptions:any = {
     responsive: true
   };

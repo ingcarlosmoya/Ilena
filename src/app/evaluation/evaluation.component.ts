@@ -23,51 +23,15 @@ export class EvaluationComponent implements OnInit {
   physicalExam: PhysicalExam;
   habits: Habits;
   evaluation: Evaluation;
+  
 
 
   constructor(private _evaluationService: EvaluationService) { }
 
   ngOnInit() {
 
-    this.person = new Person();
-    this.person.name = 'Tom';
-    this.person.lastName = 'Brady';
-    this.person.age = 32;
-    this.person.gender = "male";
 
-    this.physicalExam = new PhysicalExam();
-    this.physicalExam.weight = 63.5;
-    this.physicalExam.height = 170;
-    this.physicalExam.bmi = 14;
-    this.physicalExam.bmiDiagnostic = 'Very severely underweight';
-
-    this.habits = new Habits();
-    this.habits.activeBreaks = true;
-    this.habits.seated = 10;
-    this.habits.sleep = 8;
-    this.habits.sport = true;
-
-    // this.routines = new Array();
-    // this.routine = new Routine();
-    // this.routine.name = "Routine 1";
-    // this.routine.evaluation = "success";
-    // this.routine.result = 170;
-    // this.routine.sort = 1;
-    // this.routines.push(this.routine)
-    // this.routine = new Routine();
-    // this.routine.name = "Routine 2";
-    // this.routine.evaluation = "warning";
-    // this.routine.result = 190;
-    // this.routine.sort = 2;
-    // this.routines.push(this.routine)
-    // this.routine = new Routine();
-    // this.routine.name = "Routine 1";
-    // this.routine.evaluation = "danger";
-    // this.routine.result = 160;
-    // this.routine.sort = 3;
-    // this.routines.push(this.routine)
-
-    this.evaluation = new Evaluation();
+ this.evaluation = new Evaluation();
     this._evaluationService.getEvaluationByPatientId('DC1B99C1-E3DF-41DC-B289-6E6FD7B968DD').subscribe(
       c => {
         this.evaluation = c;
@@ -77,6 +41,25 @@ export class EvaluationComponent implements OnInit {
         this.physicalExam = this.evaluation.physicalExam;
       }
     );
+    this.person = new Person();
+    // this.person.name = 'Tom';
+    // this.person.lastName = 'Brady';
+    // this.person.age = 32;
+    // this.person.gender = "male";
+
+    this.physicalExam = new PhysicalExam();
+    // this.physicalExam.weight = 63.5;
+    // this.physicalExam.height = 170;
+    // this.physicalExam.bmi = 14;
+    // this.physicalExam.bmiDiagnostic = 'Very severely underweight';
+
+    this.habits = new Habits();
+    this.habits.activeBreaks = true;
+    this.habits.seated = 10;
+    this.habits.sleep = 8;
+    this.habits.sport = true;
+
+   
 
   }
 

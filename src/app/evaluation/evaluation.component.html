@@ -13,7 +13,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <app-habits [habits]="habits"></app-habits>
+      <app-habits [habits]=habits></app-habits>
     </div>
   </div>
   <hr>
@@ -22,9 +22,17 @@
       <app-routine-basic-result [routines]="routines"></app-routine-basic-result>
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngFor="let routine of routines">
     <div class="col-md-12">
-      <app-people-report-by-person></app-people-report-by-person>
+      <app-people-report-by-person [routine]="routine"></app-people-report-by-person>
     </div>
   </div>
+
+
+  <!--<tr *ngFor="let routine of routines" [ngClass]="{'table-danger': routine.result == 'danger','table-warning': routine.result == 'warning','table-success': routine.result == 'success'}">
+              <td>{{routine.name}}</td>
+              <td>{{routine.angle}}</td>
+              <td [ngClass]="{'text-success': routine.pain == 'No','text-danger':  routine.pain == 'Yes'}" ><strong>{{routine.pain}}</strong></td>
+              <td>{{routine.result}}</td>
+            </tr>-->
 </div>

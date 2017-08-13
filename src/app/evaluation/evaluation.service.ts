@@ -39,7 +39,12 @@ export class EvaluationService {
 }
 
 function mapEvaluation(response: Response): Evaluation{
-  return toEvaluation(response.json());
+  var evaluation = new Evaluation();
+  evaluation.habits = new Habits();
+  evaluation.person = new Person();
+  evaluation.physicalExam = new PhysicalExam();
+  evaluation = toEvaluation(response.json());
+   return evaluation;
 }
 
 function toEvaluation(p: any): Evaluation{
@@ -62,9 +67,23 @@ function toRoutine(p: any): Routine {
     name: p.name,
     angle: p.angle,
     result: p.result,
-    pain: p.pain
+    pain: p.pain,
+    sort: p.name,
+    label: p.name,
+    angles: p.angles.map(toAngle),
+    labels: p.labels.map(toLabel),
+    mean: p.mean,
+    median: p.median
   });
   return routine;
+}
+
+function toAngle(p: any): number {
+  return p;
+}
+
+function toLabel(p: any): string {
+  return p;
 }
 
 function mapPerson(response: Response): Person{
