@@ -73,7 +73,8 @@ function toRoutine(p: any): Routine {
     angles: p.angles.map(toAngle),
     labels: p.labels.map(toLabel),
     mean: p.mean,
-    median: p.median
+    median: p.median,
+    mode: p.mode
   });
   return routine;
 }

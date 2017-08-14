@@ -10,6 +10,7 @@ export class Routine {
     label:string;
     mean:number;
     median:number;
+    mode:number;
 
     constructor(){}
 }

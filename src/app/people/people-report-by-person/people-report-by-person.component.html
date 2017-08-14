@@ -18,28 +18,34 @@
         <table class="table table-sm  table-bordered">
           <thead class="thead-inverse">
             <tr class="text-center">
-              <th class="text-center">Color</th>
-              <th class="text-center">Diagnostic</th>
+              <th class="text-center">Concept</th>
+              <th class="text-center">Value</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td class="square-container">
-                <label class="square alert-danger"></label>
+                <label>Mean</label>
               </td>
               <td><label>{{routine.mean}}</label></td>
             </tr>
             <tr>
               <td class="square-container">
-                <label class="square alert-success"></label>
+                <label>Median</label>
               </td>
               <td><label>{{routine.median}}</label></td>
             </tr>
             <tr>
               <td class="square-container">
-                <label class="square alert-warning"></label>
+                <label>Mode</label>
               </td>
-              <td><label>Hypermobility</label></td>
+              <td><label>{{routine.mode}}</label></td>
+            </tr>
+            <tr>
+              <td class="square-container">
+                <label>Result</label>
+              </td>
+              <td><label>{{routine.angle}}</label></td>
             </tr>
           </tbody>
         </table>
