@@ -13,7 +13,43 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <app-habits [habits]=habits></app-habits>
+      <!--<app-habits [habits]="habits"></app-habits>-->
+
+        <div class="container">
+  <div class="row">
+    <div class="col-md-12 text-left">
+      <h1 class="display-4">Habits</h1>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <ngx-charts-pie-grid [view]="view" [scheme]="colorScheme" [results]=single>
+        </ngx-charts-pie-grid>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <h5 class="text-left" for="sport">Sport</h5>
+        <img class="sport" [src]=getSportImage()>
+        <h5 class="text-left" for="activeBreaks">Active breaks</h5>
+        <img class="activeBreaks" [src]=getActiveBreaksImage()>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
     </div>
   </div>
   <hr>

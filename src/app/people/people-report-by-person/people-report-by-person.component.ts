@@ -24,9 +24,17 @@ export class PeopleReportByPersonComponent implements OnInit {
 
    this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   //this.lineChartLabels = ['0', '25', '50', '75', '100', '125', '150','175', '220']
-  this.lineChartData = [{data: this.routine.angles, label: this.routine.name}];
+  // label:[1,3,1,3,4,4,3,1,7,5,13,12,8,21,13,15,10,14,12,18,22,15,6,12,11,11,7,13,10,53,3,4,2,1,1,1]
+  this.lineChartData = 
+   [{data: this.routine.angles, label: this.routine.name},
+  // [{data:[0,1,3,1,3,4,4,3,1,7,5,13,12,8,21,13,15,10,14,12,18,22,15,6,12,11,11,7,13,10,53,3,4,2,1,1,1,0],
+  //   label:'CDC'},
+  //  {data:[0,0,0,0,0,0,0,1,0,0,2,0,0,1,0,1,0,0,0,0,0,0,1,0,2,3,0,0,2,16,30,10,0,0,0,0,0,0],
+  //   label:'ILENA'},
+  ];
   //console.log(this.routine.labels);
   this.lineChartLabels = this.routine.labels;
+  //this.lineChartLabels = [147,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,185,188,190,191];
   }
   // lineChart
   public lineChartData:Array<any>;
@@ -43,18 +51,18 @@ export class PeopleReportByPersonComponent implements OnInit {
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'
     },
-    { // dark grey
-      backgroundColor: 'rgba(77,83,96,0.2)',
-      borderColor: 'rgba(77,83,96,1)',
-      pointBackgroundColor: 'rgba(77,83,96,1)',
-      pointBorderColor: '#fff',
-      pointHoverBackgroundColor: '#fff',
-      pointHoverBorderColor: 'rgba(77,83,96,1)'
-    },
+    // { // dark grey
+    //   backgroundColor: 'rgba(77,83,96,0.2)',
+    //   borderColor: 'rgba(77,83,96,1)',
+    //   pointBackgroundColor: 'rgba(77,83,96,1)',
+    //   pointBorderColor: '#fff',
+    //   pointHoverBackgroundColor: '#fff',
+    //   pointHoverBorderColor: 'rgba(77,83,96,1)'
+    // },
     { // grey
-      backgroundColor: 'rgba(148,159,177,0.2)',
-      borderColor: 'rgba(148,159,177,1)',
-      pointBackgroundColor: 'rgba(148,159,177,1)',
+      backgroundColor: 'rgba(255, 193, 206, 1)',
+      borderColor: 'rgba(255, 99, 132, 1)',
+      pointBackgroundColor: '#FF1C49',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
       pointHoverBorderColor: 'rgba(148,159,177,0.8)'

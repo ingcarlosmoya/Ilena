@@ -24,6 +24,14 @@ export class EvaluationService {
     return evaluation$;
   }
 
+  getPeople():Observable<Person[]>{
+      let evaluation$ =  this.http
+      .get(`${this.baseUrl}/person/`, { headers: this.getHeaders() })
+      .map(mapPersons);
+    return evaluation$;
+  }
+
+
 
   private getHeaders() {
 
@@ -36,6 +44,13 @@ export class EvaluationService {
     return headers;
   }
 
+}
+
+
+function mapPersons(response:Response): Person[]{
+   // The response of the API has a results
+   // property with the actual results
+   return response.json().map(toPerson)
 }
 
 function mapEvaluation(response: Response): Evaluation{
@@ -94,6 +109,7 @@ function mapPerson(response: Response): Person{
 function toPerson(p: any): Person {
   let person = <Person>(
     {
+      id: p.id,
       name: p.name,
       lastName: p.lastName,
       gender: p.gender,

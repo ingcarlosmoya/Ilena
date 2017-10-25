@@ -18,11 +18,11 @@ export class HabitsComponent implements OnInit {
       this.single = [
         {
           "name": "Work",
-          "value": this.habits.seated
+          "value": 4
         },
         {
           "name": "Sleep",
-          "value": this.habits.sleep
+          "value": 20
         },
         {
           "name": "Other",

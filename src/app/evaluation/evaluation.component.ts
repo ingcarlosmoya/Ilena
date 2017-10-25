@@ -10,6 +10,7 @@ import { HabitsComponent } from './../people/habits/habits.component';
 import { EvaluationService } from './evaluation.service';
 import { Evaluation } from './evaluation';
 import { PeopleReportByPersonComponent } from './../people/people-report-by-person/people-report-by-person.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-evaluation',
@@ -23,24 +24,58 @@ export class EvaluationComponent implements OnInit {
   physicalExam: PhysicalExam;
   habits: Habits;
   evaluation: Evaluation;
-  
+  single: any[];
+  activeBreaksImage : string;
 
-
-  constructor(private _evaluationService: EvaluationService) { }
+  constructor(private _evaluationService: EvaluationService,
+   private _route: ActivatedRoute) { }
 
   ngOnInit() {
 
-
+this.habits = new Habits();
  this.evaluation = new Evaluation();
-    this._evaluationService.getEvaluationByPatientId('DC1B99C1-E3DF-41DC-B289-6E6FD7B968DD').subscribe(
+
+ this._route.params.subscribe(params => {
+          let id = (params['id']);
+          console.log(id);
+          this._evaluationService.getEvaluationByPatientId(id).subscribe(
       c => {
         this.evaluation = c;
         this.habits = this.evaluation.habits;
         this.routines = this.evaluation.routines;
         this.person = this.evaluation.person;
         this.physicalExam = this.evaluation.physicalExam;
+
+        this.single = [
+        {
+          "name": "Work",
+          "value": this.habits.seated
+        },
+        {
+          "name": "Sleep",
+          "value": this.habits.sleep
+        },
+        {
+          "name": "Other",
+          "value": 24 - (this.habits.seated + this.habits.sleep)
+        }
+      ];
+    //   console.log(this.habits.activeBreaks);
+    //   this.activeBreaksImage = 'assets/img/noActiveBreaks.jpg';
+    //   if (this.habits.activeBreaks == true) {
+    //   this.activeBreaksImage = 'assets/img/yesActiveBreaks.jpg';
+    // }
+
+      // this.habits.activeBreaks = true; 
+      // this.getActiveBreaksImage();
+      // this.habits.sport = true;
+      // this.getSportImage();
       }
     );
+        });
+
+
+   
     this.person = new Person();
     // this.person.name = 'Tom';
     // this.person.lastName = 'Brady';
@@ -53,14 +88,64 @@ export class EvaluationComponent implements OnInit {
     // this.physicalExam.bmi = 14;
     // this.physicalExam.bmiDiagnostic = 'Very severely underweight';
 
-    this.habits = new Habits();
-    this.habits.activeBreaks = true;
-    this.habits.seated = 10;
-    this.habits.sleep = 8;
-    this.habits.sport = true;
+    
+    // this.habits.activeBreaks = true;
+    // this.habits.seated = 10;
+    // this.habits.sleep = 8;
+    // this.habits.sport = true;
 
    
+    //if (this.habits != undefined) {
+      // this.single = [
+      //   {
+      //     "name": "Work",
+      //     "value": this.habits.seated
+      //   },
+      //   {
+      //     "name": "Sleep",
+      //     "value": this.habits.sleep
+      //   },
+      //   {
+      //     "name": "Other",
+      //     "value": 24 - (this.habits.seated + this.habits.sleep)
+      //   }
+      // ];
+    //}
 
+  }
+
+
+  multi: any[];
+
+
+  view: any[] = [450, 350];
+
+  colorScheme = {
+    domain: ['#5AA454', '#C7B42C', '#A10A28', '#AAAAAA']
+  };
+
+  autoScale = false;
+
+  getSportImage() {
+    var sportImage = 'assets/img/noSport.jpg';
+    if (this.habits.sport == true) {
+      sportImage = 'assets/img/yesSport.jpg';
+    }
+
+    return sportImage;
+  }
+
+  getSingle() {
+
+  }
+
+  getActiveBreaksImage() {
+     var activeBreaksImage = 'assets/img/noActiveBreaks.jpg';
+    if (this.habits.activeBreaks == true) {
+      activeBreaksImage = 'assets/img/yesActiveBreaks.jpg';
+    }
+
+    return activeBreaksImage;
   }
 
 }

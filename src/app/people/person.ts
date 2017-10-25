@@ -3,6 +3,7 @@ export class Person {
     lastName:string;
     gender:string;
     age:number;
+    id : string;
 
     constructor(){
         this.name = '';

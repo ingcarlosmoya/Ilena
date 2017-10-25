@@ -14,6 +14,8 @@ import { HabitsComponent } from './people/habits/habits.component';
 import { EvaluationService } from './evaluation/evaluation.service';
 import { PeopleReportByPersonComponent } from './people/people-report-by-person/people-report-by-person.component';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { SearchComponent } from './search/search.component';
+import { appRouterModule } from './app.route';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     PersonBasicInfoComponent,
     PhysicalExamComponent,
     HabitsComponent,
-    PeopleReportByPersonComponent
+    PeopleReportByPersonComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { ChartsModule } from 'ng2-charts/ng2-charts';
     NgxChartsModule,
     BrowserAnimationsModule,
     HttpModule,
-    ChartsModule
+    ChartsModule,
+    appRouterModule
   ],
   providers: [EvaluationService],
   bootstrap: [AppComponent]
