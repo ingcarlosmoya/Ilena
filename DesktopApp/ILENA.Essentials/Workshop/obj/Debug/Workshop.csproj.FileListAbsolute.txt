@@ -1,0 +1,16 @@
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\bin\Debug\Workshop.exe.config
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\bin\Debug\Workshop.exe
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\bin\Debug\Workshop.pdb
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.dll
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\bin\Debug\Microsoft.Samples.Kinect.WpfViewers.pdb
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop.csprojResolveAssemblyReference.cache
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\MainWindow.g.cs
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\App.g.cs
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop_MarkupCompile.cache
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop_MarkupCompile.lref
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\MainWindow.baml
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop.g.resources
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop.Properties.Resources.resources
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop.csproj.GenerateResource.Cache
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop.exe
+D:\Projects\ILENA\Dev\ILENA.Essentials\Workshop\obj\Debug\Workshop.pdb

@@ -1,0 +1,133 @@
+﻿<Window x:Class="Microsoft.Samples.Kinect.SkeletonBasics.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microsoft.Samples.Kinect.SkeletonBasics"
+        mc:Ignorable="d"
+        Title="ILENA" Height="800" Width="700" Icon="Images/main.png"
+        >
+    <Grid Margin="0,-9,-8,9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <!--<RowDefinition Height="111*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="179*"/>
+            <RowDefinition Height="61*"/>
+            <RowDefinition Height="94*"/>-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <!--<ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="153*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="202*"/>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="15*"/>-->
+        </Grid.ColumnDefinitions>
+        <Label x:Name="labelError" Content="Label" Grid.Column="1" HorizontalAlignment="Left" Margin="12,594,0,0" VerticalAlignment="Top" Width="605" Visibility="Hidden" Background="#FFF51010" Height="26"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="123" Margin="8,77,0,0" Stroke="Black" VerticalAlignment="Top" Width="660" Grid.Column="1"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="232" Margin="10,231,0,0" Stroke="Black" VerticalAlignment="Top" Width="660" Grid.Column="1"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="159" Margin="8,522,0,0" Stroke="Black" VerticalAlignment="Top" Width="660" IsEnabled="False" Grid.Column="1"/>
+        <Label x:Name="lblName" Content="Nombres" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="26" Width="76" Margin="28,93,596,650" FontSize="14" Grid.Column="1"/>
+        <Label x:Name="lblGender" Content="Genero"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="58" Margin="28,127,614,616" FontSize="14" Grid.Column="1"/>
+        <Label x:Name="lblLastName" Content="Apellidos"  HorizontalAlignment="Center"  VerticalAlignment="Center" Height="30" Width="76" Margin="372,92,252,647" FontSize="14" Grid.Column="1"/>
+        <Label x:Name="lblBirth" Content="Fecha de Nacimiento"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="146" Margin="301,127,253,616" FontSize="14" Grid.Column="1"/>
+        <Label x:Name="lblEmail" Content="Correo Electrónico"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="148" Margin="28,161,524,582" FontSize="14" Grid.Column="1"/>
+
+        <Button x:Name="btnAdd" Content="Nuevo(+)" HorizontalAlignment="Left" Margin="563,47,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btnAdd_Click" Height="20"/>
+
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="96,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Grid.Column="1"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="23" Margin="439,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185" Grid.Column="1"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="161,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="254" Grid.Column="1"/>
+
+        <Button x:Name="btnCancel" Content="Cancelar" HorizontalAlignment="Left" Margin="485,472,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Click="btnCancel_Click" Height="20"/>
+        <Button x:Name="btnSave" Content="Guardar" HorizontalAlignment="Left" Margin="565,472,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click" Grid.Column="1" Height="20"/>
+
+
+        <ComboBox x:Name="cbxGender" HorizontalAlignment="Left" Margin="96,131,0,0" VerticalAlignment="Top" Width="203" Grid.Column="1" Height="22"/>
+        <DatePicker x:Name="dpkBirthDate" HorizontalAlignment="Left" Margin="439,129,0,0" VerticalAlignment="Top" Width="185" Grid.Column="1" Height="24"/>
+        <Label x:Name="lblMainInfo" Content="Información personal" HorizontalAlignment="Left" Margin="9,47,0,0" VerticalAlignment="Top" Width="192" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.056,-5.461" Grid.Column="1" Height="31"/>
+        <Label x:Name="lblPhysicalExam" Content="Examen Fisico" HorizontalAlignment="Left" Margin="12,201,0,0" VerticalAlignment="Top" Width="192" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.056,-5.461" Grid.Column="1" Height="31"/>
+        <Label x:Name="lblRoutine" Content="Rutinas" HorizontalAlignment="Left" Margin="8,491,0,0" VerticalAlignment="Top" Width="192" FontSize="16" FontWeight="Bold" RenderTransformOrigin="0.056,-5.461" Grid.Column="1" Height="31"/>
+
+        <CheckBox x:Name="ckbRecRightAngledRachis" Content="Inclinación derecha del raquis" HorizontalAlignment="Left" Margin="19,534,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="177"/>
+        <Button x:Name="btnRecRightAngledRachis" Content="Crear" HorizontalAlignment="Left" Margin="220,529,0,0" VerticalAlignment="Top" Width="75" Click="btnRecRightAngledRachis_Click" Height="20" Grid.Column="1" IsEnabled="True"/>
+        <CheckBox x:Name="ckbRecLeftAngledRachis" Content="Inclinación izquierda del raquis" HorizontalAlignment="Left" Margin="320,534,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="183"/>
+        <Button x:Name="btnRecLeftAngledRachis" Content="Crear" HorizontalAlignment="Left" Margin="549,529,0,0" VerticalAlignment="Top" Width="75" Click="btnRecLeftAngledRachis_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+
+        <CheckBox x:Name="ckbRecRightLateralInclinationRaquis" Content="Inclinación lateral derecha" HorizontalAlignment="Left" Margin="19,559,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="158"/>
+        <Button x:Name="btnRecRightLateralInclinationRaquis" Content="Crear" HorizontalAlignment="Left" Margin="220,554,0,0" VerticalAlignment="Top" Width="75" Click="btnRecRightLateralInclinationRaquis_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+        <CheckBox x:Name="ckbRecLeftLateralInclinationRaquis" Content="Inclinación lateral izquierda" HorizontalAlignment="Left" Margin="320,559,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="164"/>
+        <Button x:Name="btnRecLeftLateralInclinationRaquis" Content="Crear" HorizontalAlignment="Left" Margin="549,554,0,0" VerticalAlignment="Top" Width="75" Click="btnRecLeftLateralInclinationRaquis_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+
+        <CheckBox x:Name="ckbRecRightRotationRaquis" Content="Rotación derecha del raquis" HorizontalAlignment="Left" Margin="19,583,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="167"/>
+        <Button x:Name="btnRecRightRotationRaquis" Content="Crear" HorizontalAlignment="Left" Margin="220,578,0,0" VerticalAlignment="Top" Width="75" Click="btnRecRightRotationRaquis_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+        <CheckBox x:Name="ckbRecLeftRotationRaquis" Content="Rotación izquierda del raquis" HorizontalAlignment="Left" Margin="320,583,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="173"/>
+        <Button x:Name="btnRecLeftRotationRaquis" Content="Crear" HorizontalAlignment="Left" Margin="549,579,0,0" VerticalAlignment="Top" Width="75" Click="btnRecLeftRotationRaquis_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+
+        <CheckBox x:Name="ckbRecRightScapulohumeralAbduction" Content="Abducción escapulohumeral derecha" HorizontalAlignment="Left" Margin="19,607,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="215"/>
+        <Button x:Name="btnRecRightScapulohumeralAbduction" Content="Crear" HorizontalAlignment="Left" Margin="220,602,0,0" VerticalAlignment="Top" Width="75" Click="btnRecRightScapulohumeralAbduction_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+        <CheckBox x:Name="ckbRecLeftScapulohumeralAbduction" Content="Abducción escapulohumeral izquierda" HorizontalAlignment="Left" Margin="320,607,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="222"/>
+        <Button x:Name="btnRecLeftScapulohumeralAbduction" Content="Crear" HorizontalAlignment="Left" Margin="549,602,0,0" VerticalAlignment="Top" Width="75" Click="btnRecLeftScapulohumeralAbduction_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+
+
+        <CheckBox x:Name="ckbRecThoracolumbarExtensionRaquis" Content="Extensión dorsolumbar del raquis" HorizontalAlignment="Left" Margin="19,630,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1" Height="15" Width="197"/>
+        <Button x:Name="btnRecThoracolumbarExtensionRaquis" Content="Crear" HorizontalAlignment="Left" Margin="220,625,0,0" VerticalAlignment="Top" Width="75" Click="btnRecThoracolumbarExtensionRaquis_Click" Height="20" Grid.Column="1" IsEnabled="False"/>
+
+
+        <CheckBox x:Name="ckbRecRightScapulohumeralAdduction" Content="Aducción escapulohumeral derecha" HorizontalAlignment="Left" Margin="12,708,0,0" VerticalAlignment="Top" IsEnabled="False" Visibility="Hidden" Grid.Column="1" Height="15" Width="208"/>
+        <Button x:Name="btnRecRightScapulohumeralAdduction" Content="Crear" HorizontalAlignment="Left" Margin="213,703,0,0" VerticalAlignment="Top" Width="75" Click="btnRecRightScapulohumeralAdduction_Click" Height="20" Grid.Column="1" IsEnabled="False"  Visibility="Hidden"/>
+        <CheckBox x:Name="ckbRecLeftScapulohumeralAdduction" Content="Aducción escapulohumeral izquierda" HorizontalAlignment="Left" Margin="313,708,0,0" VerticalAlignment="Top" IsEnabled="False" Grid.Column="1"  Visibility="Hidden" Height="15" Width="215"/>
+        <Button x:Name="btnRecLeftScapulohumeralAdduction" Content="Crear" HorizontalAlignment="Left" Margin="542,703,0,0" VerticalAlignment="Top" Width="75" Click="btnRecLeftScapulohumeralAdduction_Click" Height="20" Grid.Column="1" IsEnabled="False"  Visibility="Hidden"/>
+
+        <Label x:Name="lblSporter" Content="¿Practica usted algun deporte?" HorizontalAlignment="Left" Margin="20,273,0,0" VerticalAlignment="Top" Width="218" FontSize="14" Grid.Column="1" Height="29"/>
+        <RadioButton x:Name="rbtSporterYes" Content="Si" Grid.Column="1" GroupName="sporter" HorizontalAlignment="Left" Margin="225,282,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.467" Height="15" Width="28"/>
+        <RadioButton x:Name="rbtSporterNo" Content="No" Grid.Column="1" GroupName="sporter" HorizontalAlignment="Left" Margin="258,282,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.733" IsChecked="True" Height="15" Width="35"/>
+        <Label x:Name="lblSporterWhich" Content="¿Cual?" Grid.Column="1" HorizontalAlignment="Left" Margin="323,273,0,0" VerticalAlignment="Top" Width="54" FontSize="14" Height="29"/>
+        <TextBox x:Name="txtWhich" HorizontalAlignment="Left" Height="23" Margin="381,279,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244" Grid.Column="1"/>
+
+
+        <Label x:Name="lblHeight" Content="Estatura"  HorizontalAlignment="Center"  VerticalAlignment="Center" Height="26" Width="64" Margin="16,239,620,504" FontSize="14" Grid.Column="1"/>
+        <Slider x:Name="sldHeight" Grid.Column="1" HorizontalAlignment="Left" Margin="61,243,0,0" VerticalAlignment="Top" Width="190" Minimum="1" Maximum="250" TickPlacement="BottomRight" Height="33" TickFrequency="1" IsSnapToTickEnabled="True"/>
+        <TextBox x:Name="txtHeight" Text="{Binding Value, ElementName=sldHeight, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="255,245,0,0" 
+            TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+
+        <Label x:Name="lblWeight" Content="Peso"  HorizontalAlignment="Center"  VerticalAlignment="Center" Height="26" Width="42" Margin="348,239,310,504" FontSize="14" Grid.Column="1"/>
+        <Slider x:Name="sldWeight" Grid.Column="1" HorizontalAlignment="Left" Margin="381,242,0,0" VerticalAlignment="Top" Width="191" Minimum="1" Maximum="250" TickPlacement="BottomRight" Height="33" TickFrequency="1" IsSnapToTickEnabled="True"/>
+        <TextBox x:Name="txtWeight" Text="{Binding Value, ElementName=sldWeight, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="587,242,0,0" 
+            TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+
+        <Label x:Name="lblSeated" Content="¿Cuantas horas permanece sentado?" HorizontalAlignment="Left" Margin="20,308,0,0" VerticalAlignment="Top" Width="244" FontSize="14" Height="29" Grid.Column="1"/>
+        <Slider x:Name="sldSeatedTime" Grid.Column="1" HorizontalAlignment="Left" Margin="331,312,0,0" VerticalAlignment="Top" Width="188" Minimum="1" Maximum="24" TickPlacement="BottomRight" Height="33" TickFrequency="1" IsSnapToTickEnabled="True"/>
+        <TextBox x:Name="txtSeatedTime" Text="{Binding Value, ElementName=sldSeatedTime, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="587,312,0,0" 
+            TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+
+        <Label x:Name="lblActiveBreaksHours" Content="¿Cuantas pausas activas practica?" HorizontalAlignment="Left" Margin="20,339,0,0" VerticalAlignment="Top" Width="260" FontSize="14" Grid.Column="1" Height="29"/>
+        <Slider x:Name="sldActiveBreaksTime" Grid.Column="1" HorizontalAlignment="Left" Margin="331,339,0,0" VerticalAlignment="Top" Width="188" Minimum="0" Maximum="24" TickPlacement="BottomRight" Height="33" TickFrequency="1" IsSnapToTickEnabled="True"/>
+        <TextBox x:Name="txtActiveBreakTime" Text="{Binding Value, ElementName=sldActiveBreaksTime, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="587,338,0,0" 
+            TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+
+        <Label x:Name="lblSleep" Content="¿Cuantas horas duerme?" HorizontalAlignment="Left" Margin="20,367,0,0" VerticalAlignment="Top" Width="177" FontSize="14" Grid.Column="1" Height="29"/>
+        <Slider x:Name="sldSleepTime" Grid.Column="1" HorizontalAlignment="Left" Margin="331,367,0,0" VerticalAlignment="Top" Width="188" Minimum="0" Maximum="24" TickPlacement="BottomRight" Height="33" TickFrequency="1" IsSnapToTickEnabled="True"/>
+        <TextBox x:Name="txtSleepTime" Text="{Binding Value, ElementName=sldSleepTime, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="587,364,0,0" 
+            TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="38"/>
+
+        <Label x:Name="lblBackache" Content="¿Sufre dolores de espalda?" HorizontalAlignment="Left" Margin="20,396,0,0" VerticalAlignment="Top" Width="178" FontSize="14" Grid.Column="1" Height="29"/>
+        <RadioButton x:Name="rbtBackacheYes" Content="Si" Grid.Column="1" GroupName="backache" HorizontalAlignment="Left" Margin="227,404,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.467" Height="15" Width="28"/>
+        <RadioButton x:Name="rbtBackacheNo" Content="No" Grid.Column="1" GroupName="backache" HorizontalAlignment="Left" Margin="258,404,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.733" IsChecked="True" Height="15" Width="35"/>
+        <Label x:Name="lblNeckache" Content="¿Sufre dolores de cuello?" Grid.Column="1" HorizontalAlignment="Left" Margin="323,396,0,0" VerticalAlignment="Top" Width="165" FontSize="14" Height="29"/>
+        <RadioButton x:Name="rbtNeckacheYes" Content="Si" Grid.Column="1" GroupName="neckache" HorizontalAlignment="Left" Margin="557,404,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.467" Height="15" Width="28"/>
+        <RadioButton x:Name="rbtNeckacheNo" Content="No" Grid.Column="1" GroupName="neckache" HorizontalAlignment="Left" Margin="590,404,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.733" IsChecked="True" Height="15" Width="35"/>
+        <Label x:Name="lblShoulderache" Content="¿Sufre dolores de hombro?" HorizontalAlignment="Left" Margin="20,425,0,0" VerticalAlignment="Top" Width="177" FontSize="14" Grid.Column="1" Height="29"/>
+        <RadioButton x:Name="rbtShoulderacheYes" Content="Si" Grid.Column="1" GroupName="shoulderache" HorizontalAlignment="Left" Margin="227,433,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.467" Height="15" Width="28"/>
+        <RadioButton x:Name="rbtShoulderacheNo" Content="No" Grid.Column="1" GroupName="shoulderache" HorizontalAlignment="Left" Margin="258,433,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.733" IsChecked="True" Height="15" Width="35"/>
+        <Label x:Name="lblHandache" Content="¿Sufre dolores en sus manos?" Grid.Column="1" HorizontalAlignment="Left" Margin="323,425,0,0" VerticalAlignment="Top" Width="191" FontSize="14" Height="29"/>
+        <RadioButton x:Name="rbtHandacheYes" Content="Si" Grid.Column="1" GroupName="handache" HorizontalAlignment="Left" Margin="557,433,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.467" Height="15" Width="28"/>
+        <RadioButton x:Name="rbtHandacheNo" Content="No" Grid.Column="1" GroupName="handache" HorizontalAlignment="Left" Margin="590,433,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.971,0.733" IsChecked="True" Height="15" Width="35"/>
+
+
+    </Grid>
+
+</Window>
