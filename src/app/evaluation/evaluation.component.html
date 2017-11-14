@@ -65,10 +65,13 @@
   </div>
 
 
-  <!--<tr *ngFor="let routine of routines" [ngClass]="{'table-danger': routine.result == 'danger','table-warning': routine.result == 'warning','table-success': routine.result == 'success'}">
-              <td>{{routine.name}}</td>
-              <td>{{routine.angle}}</td>
-              <td [ngClass]="{'text-success': routine.pain == 'No','text-danger':  routine.pain == 'Yes'}" ><strong>{{routine.pain}}</strong></td>
-              <td>{{routine.result}}</td>
-            </tr>-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4  offset-md-4">
+      <a type="button" [routerLink]="['/search']" class="btn btn-primary btn-block">
+          <i class="fa fa-angle-double-left"></i> Volver</a>
+    </div>
+  </div>
+  <br />
+</div>
 </div>
